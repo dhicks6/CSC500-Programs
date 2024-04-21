@@ -1,0 +1,11 @@
+print('Part 1: \nI will add and subtract any two numbers for you.')
+num1 = input('What is the first number you would like to add and subtract? ')
+num2 = input('What is the second number you would like to add and subtract? ')
+print('The sum of',num1,'and',num2,'is',int(num1)+int(num2))
+print('The difference of',num1,'and',num2,'is',int(num1)-int(num2))
+
+print('Part 2: \nI will multiply and divide any two numbers for you.')
+num1 = input('What is the first number you would like to multiply and divide? ')
+num2 = input('What is the second number you would like to multiply and divide? ')
+print('The product of',num1,'and',num2,'is',int(num1)*int(num2))
+print('The quotient of',num1,'and',num2,'is',int(num1)/int(num2))
