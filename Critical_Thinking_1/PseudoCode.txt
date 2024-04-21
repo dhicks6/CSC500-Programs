@@ -1,0 +1,11 @@
+Pseudocode for Mod 1 Critical Thinking
+
+Ask the user for two numbers and store them in vars named num1 and num2
+Add num1 by num2 then print the result
+Subtract num1 by num2 then print the result
+
+Ask the user for two more numbers and store them in vars named num1 and num2
+Python will "overwrite" the values previously stored in num1 and num2 so we do not
+    need to worry about clearing them out
+Multiply num1 by num2 then print the result
+Divide num1 by num2 then print the result
