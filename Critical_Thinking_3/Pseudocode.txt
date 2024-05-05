@@ -1,0 +1,11 @@
+Part 1
+save the value of the meal
+save the value of the tax
+save the value of the tip
+Print it all out
+
+Part 2
+Get the input from the user
+add the time plus the time for the alarm to go off
+modulo that by 24
+print the time after alarm
