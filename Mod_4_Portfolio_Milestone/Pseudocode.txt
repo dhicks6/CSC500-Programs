@@ -1,0 +1,5 @@
+Setup the ItemToPurchase class based on the assignment
+Create a ShoppingCart class to build the cart for shoppers
+    In the ShoppingCart class make a method for adding items, calculating the total cost of the cart,
+    and printing out that total cost.
+Create the main method to control the flow of the program.
