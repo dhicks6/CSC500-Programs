@@ -1,23 +1,28 @@
+# The ItemToPurchase class is a class with a constructor to make items
 class ItemToPurchase:
-    def __init__(self, item_name, item_price, item_quantity):
+    def __init__(self, item_name, item_price, item_quantity, item_description):
         self.item_name = item_name
         self.item_price = item_price
         self.item_quantity = item_quantity
+        self.item_description = item_description
 
     def print_item_cost(self):
         total_cost = self.item_price * self.item_quantity
         print(f"{self.item_name} {self.item_quantity} @ ${self.item_price} = ${total_cost}")
         return total_cost
-
+# The ShoppingCart class is a class with a constructor to make a shopping cart allowing us 
+# to use functions to add remove and edit items in the shopping cart
 class ShoppingCart:
     def __init__(self, customer_name="none", current_date="January 1, 2020"):
         self.customer_name = customer_name
         self.current_date = current_date
         self.cart_items = []
         
+    # add_item allows the addition of items to the shopping cart
     def add_item(self, item):
         self.cart_items.append(item)
         
+    # remove_item allows the removal of items from the shopping cart   
     def remove_item(self, item_name):
         found = False
         for item in self.cart_items:
@@ -28,6 +33,7 @@ class ShoppingCart:
         if not found:
             print("Item not found in cart. Nothing removed.")
             
+    # The modify_item class allows us to modify an items name, price, quantity, and description
     def modify_item(self, item):
         found = False
         for cart_item in self.cart_items:
@@ -36,6 +42,8 @@ class ShoppingCart:
                     cart_item.item_price = item.item_price
                 if item.item_quantity != 0:
                     cart_item.item_quantity = item.item_quantity
+                if item.item_description != "":
+                    cart_item.item_description = item.item_description
                 found = True
                 break
         if not found:
@@ -62,7 +70,7 @@ class ShoppingCart:
         print(f"{self.customer_name}'s Shopping Cart - {self.current_date}")
         print("Item Descriptions")
         for item in self.cart_items:
-            print(f"{item.item_name}")
+            print(f"{item.item_name}: {item.item_description}")
     
     def calculate_total_cost(self):
         total_cost = sum(item.print_item_cost() for item in self.items)
@@ -77,7 +85,7 @@ def print_menu(cart):
         "\nMENU\n"
         "a - Add item to cart\n"
         "r - Remove item from cart\n"
-        "c - Change item quantity\n"
+        "c - Edit item\n"
         "i - Output items' descriptions\n"
         "o - Output shopping cart\n"
         "q - Quit\n"
@@ -90,7 +98,8 @@ def print_menu(cart):
             item_name = input("Enter the item name: ")
             item_price = float(input("Enter the item price: "))
             item_quantity = int(input("Enter the item quantity: "))
-            item = ItemToPurchase(item_name, item_price, item_quantity)
+            item_description = input("Enter the item description: ")
+            item = ItemToPurchase(item_name, item_price, item_quantity, item_description)
             cart.add_item(item)
         elif option == "r":
             item_name = input("Enter name of item to remove: ")
@@ -99,7 +108,8 @@ def print_menu(cart):
             item_name = input("Enter the item name: ")
             item_price = float(input("Enter the new item price (enter 0 to keep current price): "))
             item_quantity = int(input("Enter the new item quantity (enter 0 to keep current quantity): "))
-            item = ItemToPurchase(item_name, item_price, item_quantity)
+            item_description = input("Enter the new item description (press enter to keep the current item description):")
+            item = ItemToPurchase(item_name, item_price, item_quantity, item_description)
             cart.modify_item(item)
         elif option == "i":
             print("\nOUTPUT ITEMS' DESCRIPTIONS")
