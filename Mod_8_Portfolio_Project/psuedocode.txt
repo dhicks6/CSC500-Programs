@@ -1,0 +1,29 @@
+Define ItemToPurchase class
+    a. Constructor with item_name, item_price, item_quantity, item_description
+    b. Method print_item_cost to calculate and print total cost
+
+Define ShoppingCart class
+    a. Constructor with customer_name, current_date, and cart_items list
+    b. Method add_item to add item to cart
+    c. Method remove_item to remove item from cart
+    d. Method modify_item to modify item details in cart
+    e. Method get_num_items_in_cart to return total number of items
+    f. Method get_cost_of_cart to return total cost of items
+    g. Method print_total to print total cost and details of items
+    h. Method print_descriptions to print item descriptions
+
+Define function print_menu
+    a. Print menu options
+    b. Loop until user chooses 'q'
+        i. If 'a', get item details and add to cart
+        ii. If 'r', get item name and remove from cart
+        iii. If 'c', get item name and new quantity, modify item in cart
+        iv. If 'i', print item descriptions
+        v. If 'o', print total cost and item details
+        vi. If invalid option, print error message
+
+Define main function
+    a. Get customer name and current date
+    b. Create ShoppingCart instance
+    c. Print customer name and date
+    d. Call print_menu with ShoppingCart instance

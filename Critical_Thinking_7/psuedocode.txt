@@ -1,4 +1,4 @@
 Create the appropriate dictionaries
 
 Write a input statement that asks a user to select a class
-    Then ouput the information for that class.
+    Then ouput the information for that class.  
